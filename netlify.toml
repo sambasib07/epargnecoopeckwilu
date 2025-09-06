@@ -1,34 +1,27 @@
 [build]
-publish = "."
-
-# Redirection de l'URL racine vers index.html pour éviter les erreurs 404
-[[redirects]]
-from = "/"
-to = "/index.html"
-status = 200
-
-# Cache des fichiers pour améliorer la vitesse de chargement
-[[headers]]
-for = "/index.html"
-[headers.values]
-  Cache-Control = "public, max-age=0, must-revalidate"
+  publish = "."
 
 [[headers]]
-for = "/manifest.json"
-[headers.values]
-  Cache-Control = "public, max-age=604800, immutable"
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
 [[headers]]
-for = "/sw.js"
-[headers.values]
-  Cache-Control = "no-cache, no-store, must-revalidate"
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-for = "/*.jpg"
-[headers.values]
-  Cache-Control = "public, max-age=604800, immutable"
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Service-Worker-Allowed = "/"
 
 [[headers]]
-for = "/*.css"
-[headers.values]
-  Cache-Control = "public, max-age=604800, immutable"
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/json"
