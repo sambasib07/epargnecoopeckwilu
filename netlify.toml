@@ -1,20 +1,27 @@
+# Netlify configuration for Coopec Kwilu PWA
 [build]
   publish = "."
 
+# Force SPA-style serving of indexo.html at all routes (no function changes)
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/indexo.html"
   status = 200
-  force = true
 
+# Service worker allowed to control the whole scope
 [[headers]]
   for = "/sw.js"
   [headers.values]
     Cache-Control = "no-cache"
-    Content-Type = "application/javascript; charset=utf-8"
+    Service-Worker-Allowed = "/"
+
+# PWA essentials: cache manifest + icons sensibly
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
 
 [[headers]]
-  for = "/manifest.webmanifest"
+  for = "/icons/*"
   [headers.values]
-    Cache-Control = "no-cache"
-    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=31536000, immutable"
