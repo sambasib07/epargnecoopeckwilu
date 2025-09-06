@@ -930,7 +930,55 @@
             </div>
         </div>
 
-        <footer>
+        <!-- Page d'accueil -->
+        <div id="home-page" class="page active">
+            <h2>Bienvenue à la Coopec Kwilu</h2>
+            <h3>Gérez efficacement les opérations d'épargne de vos membres. Cette application gère l'enregistrement des dépôts et retraits des épargnes ainsi que les différentes commandes y relatives: le solde, les relevés des comptes et les corrections d'écritures.</h3>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <img src="https://i.postimg.cc/RNH2v9sC/logo-coopec-Kwilu.jpg" alt="Logo Coopec Kwilu" style="max-width: 300px;">
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <div style="background: var(--light); padding: 20px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-money-bill-wave" style="font-size: 2.5rem; color: var(--success); margin-bottom: 15px;"></i>
+                        <h3>Encodage</h3>
+                        <p>Enregistrez les dépôts et retraits des membres</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="background: var(--light); padding: 20px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-tasks" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                        <h3>Commandes</h3>
+                        <p>Générez les soldes et relevés des membres</p>
+                    </div>
+                    
+                     <!-- Bouton d'installation -->
+                    <button id="installButton" class="btn btn-success">
+                        <i class="fas fa-download"></i> Installer l'application
+                    </button>
+                    
+                    <!-- Instructions d'installation -->
+                    <div id="pwaStatus" class="pwa-status pwa-loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Vérification de l'installation PWA...</span>
+                    </div>
+                    
+                    <div class="install-instructions" id="installInstructions" style="display: none;">
+                        <h3>Comment installer l'application</h3>
+                        <ul>
+                            <li><strong>Sur Chrome Android:</strong> Appuyez sur le menu (⋮) → "Ajouter à l'écran d'accueil"</li>
+                            <li><strong>Sur Safari iOS:</strong> Appuyez sur l'icône de partage (⎗) → "Sur l'écran d'accueil"</li>
+                            <li><strong>Sur Desktop Chrome/Edge:</strong> Cliquez sur l'icône d'installation dans la barre d'adresse</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
         <div class="container">
             <p>Coopec Kwilu &copy; 2023 - Tous droits réservés</p>
             <p>Système de Gestion d'Épargne</p>
