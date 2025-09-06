@@ -2,7 +2,7 @@
   "name": "Coopec Kwilu - Gestion Épargne",
   "short_name": "Coopec Kwilu",
   "description": "Système de gestion des dépôts, retraits et commandes",
-  "start_url": "/indexo.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#2c3e50",
   "theme_color": "#2c3e50",
